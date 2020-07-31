@@ -105,6 +105,7 @@
         </div>
       </el-form-item>
       <el-form-item label="车辆描述">
+        <!-- wangeditor富文本编辑器 -->
         <div ref="editorDom" style="text-align:left;"></div>
       </el-form-item>
       <el-form-item>
@@ -117,7 +118,7 @@
 <script>
 import Editor from "wangeditor";
 export default {
-  name: "ParkingAdd",
+  name: "CarsAdd",
   data() {
     return {
       // 富文本对象
@@ -150,14 +151,14 @@ export default {
       this.cars_attr.push({ key4: 111, value4: 222 });
     },
     // 创建富文本对象
-    createEditor(){
-        this.editor = new Editor(this.$refs.editorDom);
-        this.editor.customConfig.onchange = html =>{};
-        this.editor.create(); //创建富文本实例
+    createEditor() {
+      this.editor = new Editor(this.$refs.editorDom);
+      this.editor.customConfig.onchange = html => {};
+      this.editor.create(); //创建富文本实例
     }
   },
-  mounted () {
-      this.createEditor();
+  mounted() {
+    this.createEditor();
   }
 };
 </script>
